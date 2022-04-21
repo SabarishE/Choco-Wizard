@@ -27,9 +27,11 @@ export const Login = ({ setflag, flag }) => {
     });
 
     if (user.admin === true) {
-      return history.push("/admin");
+      history.push("/adminpage");
+      return window.location.reload();
+    } else {
+      return history.push("/myaccount");
     }
-    return history.push("/Allproducts");
   };
 
   const loginHandler = (data, e) => {

@@ -154,7 +154,21 @@ const Products = ({ ProductsRefresh, reducerResults }) => {
     }
   };
 
-  // ---- pagination for products table
+  // ---- pagination for products table ----
+
+  const [PageNumber, setPageNumber] = useState(0);
+  const [productsPerPage, setproductsPerPage] = useState(5);
+
+  const productsVisited = PageNumber * productsPerPage;
+  const totalPages = Math.ceil(
+    reducerResults.allProducts.products.length / productsPerPage
+  );
+
+  let pagesArray = [];
+
+  for (let i = 0; i < totalPages; i++) {
+    pagesArray.push(i);
+  }
 
   return (
     <div id="products">
@@ -202,39 +216,100 @@ const Products = ({ ProductsRefresh, reducerResults }) => {
               </tr>
             </thead>
             <tbody>
-              {reducerResults.allProducts.products.map((item) => {
-                return (
-                  <tr key={item._id}>
-                    <td>{item._id}</td>
-                    <td>{item.name}</td>
-                    <td>{item.price}</td>
-                    <td>{item.image}</td>
-                    <td>{item.description}</td>
-                    <td>
-                      <button
-                        className="delete-btn"
-                        onClick={() => DeleteHandler(item._id)}
-                      >
-                        delete
-                      </button>
-                      <button
-                        className="update-btn"
-                        onClick={() => setupdateID(item._id)}
-                      >
-                        update
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
+              {reducerResults.allProducts.products
+                .slice(productsVisited, productsVisited + productsPerPage)
+                .map((item, index) => {
+                  return (
+                    <tr key={item._id}>
+                      <td>{item._id}</td>
+                      <td>{item.name}</td>
+                      <td>{item.price}</td>
+                      <td>{item.image}</td>
+                      <td>{item.description}</td>
+                      <td>
+                        <button
+                          className="delete-btn"
+                          onClick={() => DeleteHandler(item._id)}
+                        >
+                          delete
+                        </button>
+                        <button
+                          className="update-btn"
+                          onClick={() => setupdateID(item._id)}
+                        >
+                          update
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
         )}
+        <div className="Pagination">
+          <div className="pagination-buttons">
+            {/* -----previous page number button------ */}
+
+            <button
+              className="previous-button"
+              onClick={() =>
+                PageNumber > 0
+                  ? setPageNumber(PageNumber - 1)
+                  : setPageNumber(PageNumber)
+              }
+            >
+              {"<"}{" "}
+            </button>
+
+            {/* ----page number buttons---- */}
+
+            <PaginationButtons
+              pagesArray={pagesArray}
+              setPageNumber={setPageNumber}
+            />
+
+            {/* -----next page number button------ */}
+
+            <button
+              className="next-button"
+              onClick={() =>
+                PageNumber < totalPages - 1
+                  ? setPageNumber(PageNumber + 1)
+                  : setPageNumber(PageNumber)
+              }
+            >
+              {">"}{" "}
+            </button>
+          </div>
+
+          <div className="current-page-number">
+            <span>PAGE : {PageNumber + 1}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
+const PaginationButtons = ({ pagesArray, setPageNumber }) => {
+  return (
+    <>
+      {pagesArray.map((pages) => {
+        return (
+          <button
+            className="page-number-button"
+            value={pages}
+            onClick={() => {
+              setPageNumber(pages);
+            }}
+          >
+            {pages + 1}
+          </button>
+        );
+      })}
+    </>
+  );
+};
 // ---- creating a product form----
 
 const NewProductForm = ({ setLoading, ProductsRefresh }) => {
@@ -473,67 +548,78 @@ const Orders = ({ Allorders, OrdersRefresh }) => {
     <div id="orders">
       <h1>{"ORDERS"}</h1>
 
-      <table className="orders-table">
-        <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Orderd by</th>
-            <th>Email</th>
-            <th>Orderd on</th>
-            <th>Summary</th>
-            <th>total price (₹)</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Allorders.map((item, index) => {
-            return (
-              <tr key={item._id}>
-                <td>{item.orderid}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>{new Date(item.timestamp).toDateString()}</td>
-                <td>
-                  <button
-                    value={item._id}
-                    onMouseOver={(ele) => {
-                      SummaryHandler(ele.target.value);
-                      setflag(true);
-                    }}
-                  >
-                    View
-                  </button>
-                </td>
-                <td>{item.totalprice}</td>
-                <td>
-                  {item.dispatch ? (
-                    <span style={{ color: "green" }}>{"Dispatched"}</span>
-                  ) : (
-                    <span style={{ color: "orange" }}>{"Processing"}</span>
-                  )}
-                </td>
-                <td>
-                  {item.dispatch === false ? (
+      {Allorders.length <= 0 ? (
+        <div className="no-orders">
+          <img
+            src={require("../../media/orders.png").default}
+            alt="cart-pic"
+          ></img>
+          <h1>{"No orders were made"}</h1>
+        </div>
+      ) : (
+        <table className="orders-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Orderd by</th>
+              <th>Email</th>
+              <th>Orderd on</th>
+              <th>Summary</th>
+              <th>total price (₹)</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Allorders.map((item, index) => {
+              return (
+                <tr key={item._id}>
+                  <td>{item.orderid}</td>
+                  <td>{item.name}</td>
+                  <td>{item.email}</td>
+                  <td>{new Date(item.timestamp).toDateString()}</td>
+                  <td>
                     <button
                       value={item._id}
-                      onClick={(e) => {
-                        DispatchHandler(e.target.value);
-                        setdisable(true);
+                      onMouseOver={(ele) => {
+                        SummaryHandler(ele.target.value);
+                        setflag(true);
                       }}
-                      disabled={disable}
                     >
-                      {disable ? "N/A" : "dispatch"}
+                      View
                     </button>
-                  ) : (
-                    "N/A"
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+                  </td>
+                  <td>{item.totalprice}</td>
+                  <td>
+                    {item.dispatch ? (
+                      <span style={{ color: "green" }}>{"Dispatched"}</span>
+                    ) : (
+                      <span style={{ color: "orange" }}>{"Processing"}</span>
+                    )}
+                  </td>
+                  <td>
+                    {item.dispatch === false ? (
+                      <button
+                        value={item._id}
+                        onClick={(e) => {
+                          DispatchHandler(e.target.value);
+                          setdisable(true);
+                        }}
+                        disabled={disable}
+                      >
+                        {disable ? "N/A" : "dispatch"}
+                      </button>
+                    ) : (
+                      "N/A"
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
+
       {console.log("required order summary ::>>", requiredOrder)}
       <div
         className="summary-div"

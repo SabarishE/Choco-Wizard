@@ -160,7 +160,7 @@ export const Mycart = () => {
                     <button onClick={() => AddQtyHandler(item._id)}>+</button>
                   </span>
                   <span>X {item.price}</span>
-                  <span>${item.quantity * item.price}</span>
+                  <span>₹{item.quantity * item.price}</span>
 
                   <span className="remove-btn">
                     <button onClick={() => RemoveFromCartHandler(item._id)}>
@@ -176,7 +176,7 @@ export const Mycart = () => {
                 <h3>ORDER SUMMARY</h3>
                 <div>
                   <span>TOTAL</span>
-                  <span>${Amounts.reduce((a, b) => a + b)}</span>
+                  <span>₹{Amounts.reduce((a, b) => a + b)}</span>
                 </div>
                 <StripeCheckout
                   stripeKey="pk_test_51JpwLUSAlzxtYem5HnNpoVpMtIH8KYunqHUL9zUlRdewUayQLhGWuNIIM7BmfjCQ49YEPa5CavUaeswef1G0J6eR00YiEUb6da"

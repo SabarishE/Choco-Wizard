@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 export const Homepage = () => {
   const [flag, setflag] = useState(false);
   const userstatus = useSelector((state) => state.account.UserStatus);
-
+  const email = localStorage.getItem("email");
   return (
     <div className="homepage">
       <div className="homepage-1">
@@ -33,7 +33,7 @@ export const Homepage = () => {
           </div>
 
           <div>
-            {userstatus ? (
+            {email ? (
               ""
             ) : (
               <div className="flip-card">

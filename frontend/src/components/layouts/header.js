@@ -16,9 +16,11 @@ export const Header = () => {
   const cart = useSelector((state) => state.cart.cart);
   const userstatus = useSelector((state) => state.account.UserStatus);
   const username = useSelector((state) => state.account.UserName);
+
   const email = localStorage.getItem("email");
   const isAdmin = localStorage.getItem("admin");
   console.log("userstatus is >>>", userstatus);
+  console.log("admin status is >>>", isAdmin);
 
   const LogoutHandler = () => {
     const removables = ["name", "email", "token", "admin"];
@@ -79,8 +81,8 @@ export const Header = () => {
             {"All products"}
           </ReactTooltip>
 
-          {isAdmin ? (
-            <div>
+          {isAdmin === "true" ? (
+            <span>
               <span
                 data-tip
                 data-for="admin-pannel"
@@ -99,13 +101,13 @@ export const Header = () => {
               <ReactTooltip id="admin-pannel" place="bottom" effect="solid">
                 {"Admin Panel"}
               </ReactTooltip>
-            </div>
+            </span>
           ) : (
             ""
           )}
 
           {/* ----icon 2----- */}
-          {userstatus && email !== "admin@chocowizard.com" ? (
+          {isAdmin === "false" ? (
             <span>
               <span
                 data-tip
@@ -134,7 +136,8 @@ export const Header = () => {
           )}
 
           {/* ----icon 3 (username badge)----- */}
-          {userstatus && email !== "admin@chocowizard.com" ? (
+
+          {email ? (
             <div className="user-badge">
               <div className="user-badge-icon">
                 <span>
@@ -159,6 +162,7 @@ export const Header = () => {
                   </ReactTooltip>
                 </span>
               </div>
+
               <div className="user-badge-details">
                 <span>{username}</span>
                 <span onClick={LogoutHandler} className="logout">

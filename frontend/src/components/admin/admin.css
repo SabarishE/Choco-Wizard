@@ -4,6 +4,20 @@ html {
 #orders{
 position: relative;
 }
+.no-orders {
+  width: 280px;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: rgb(166, 166, 166);
+  text-align: center;
+  font-family: "Concert One", cursive;
+}
+.no-orders img {
+  height: 8rem;
+  width: 8rem;
+  display: block;
+  margin: auto;
+}
 .Admin-container {
   width: 100%;
   min-height: 90vh;
@@ -186,11 +200,14 @@ border-radius: 0.5rem;
   font-family: "Prompt", sans-serif;
 }
 #products form div label{
-  padding:0  0.25rem ;
+  padding-left:  0.25rem ;
 }
 #products form div input,#products form div textarea{
   border-radius: 0 0 0.25rem 0.25rem;
   border:none;
+}
+#products form div input:focus,#products form div textarea:focus{
+  outline: none;
 }
 .new-product .new-product textarea{
   width:70%;
@@ -246,6 +263,43 @@ border-radius: 0.5rem;
 background-color: white;
 }
 
+/* ----CSS for pagination ---- */
+
+.Pagination{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.Pagination div{
+  margin:auto;
+}
+.previous-button{
+  border-radius: 1rem  0 0 1rem;
+}
+.page-number-button{
+  margin:2rem 1rem;
+}
+.next-button{
+  border-radius: 0rem  1rem 1rem 0;
+}
+
+.page-number-button,.next-button,.previous-button{
+
+  background-color: black;
+  color: white;
+  margin: 0.25rem;
+  box-sizing:border-box;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.current-page-number span{
+
+  color: black;
+  font-weight: bold;
+  font-family: "Russo One", sans-serif;
+  font-size: 0.8rem;
+}
 @media screen and (max-width: 768px) {
 
 .products-table-div{

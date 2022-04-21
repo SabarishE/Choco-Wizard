@@ -30,7 +30,7 @@ export const Body = () => {
           <Myaccount />
         </Route>
         <Route path="/adminpage">
-          {isAdmin ? <Adminpage /> : <Homepage />}
+          <Adminpage />
         </Route>
         <Route path="*">
           <Homepage />
