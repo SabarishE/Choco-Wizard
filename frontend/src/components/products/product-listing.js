@@ -26,7 +26,7 @@ export const ProductListing = () => {
     };
     axios
       .get(
-        "http://localhost:5000/products/allproducts/admin@chocowizard.com",
+        "https://choco-wizard.herokuapp.com/products/allproducts/admin@chocowizard.com",
         options
       )
       .then((res) => {

@@ -27,7 +27,7 @@ export const Adminpage = () => {
     };
     axios
       .get(
-        `http://localhost:5000/orders/allorders/admin@chocowizard.com`,
+        `https://choco-wizard.herokuapp.com/orders/allorders/admin@chocowizard.com`,
         options
       )
       .then((res) => {
@@ -49,7 +49,7 @@ export const Adminpage = () => {
     };
     axios
       .get(
-        "http://localhost:5000/products/allproducts/admin@chocowizard.com",
+        "https://choco-wizard.herokuapp.com/products/allproducts/admin@chocowizard.com",
         options
       )
       .then((res) => {
@@ -131,7 +131,10 @@ const Products = ({ ProductsRefresh, reducerResults }) => {
 
     if (window.confirm(`Delete the product ${ID} ?`) === true) {
       axios
-        .delete(`http://localhost:5000/products/deleteproduct/${ID}`, options)
+        .delete(
+          `https://choco-wizard.herokuapp.com/products/deleteproduct/${ID}`,
+          options
+        )
         .then((res) => {
           console.log(
             "response data from local server all products by admin :",
@@ -252,7 +255,11 @@ const NewProductForm = ({ setLoading, ProductsRefresh }) => {
       },
     };
     axios
-      .post("http://localhost:5000/products/newproduct", data, options)
+      .post(
+        "https://choco-wizard.herokuapp.com/products/newproduct",
+        data,
+        options
+      )
       .then((res) => {
         if (res.data.flag == true) {
           console.log(
@@ -342,7 +349,7 @@ const UpdateProductForm = ({
     };
     axios
       .patch(
-        `http://localhost:5000/products/updateproduct/${updateID}`,
+        `https://choco-wizard.herokuapp.com/products/updateproduct/${updateID}`,
         data,
         options
       )
@@ -443,7 +450,10 @@ const Orders = ({ Allorders, OrdersRefresh }) => {
     console.log("dispatch handler alert >>>", ID);
 
     axios
-      .patch(`http://localhost:5000/orders/dispatch/${ID}`, options)
+      .patch(
+        `https://choco-wizard.herokuapp.com/orders/dispatch/${ID}`,
+        options
+      )
       .then((res) => {
         console.log("Order dispatched successfully", res);
         toast("Order dispatched successfully!!!", {

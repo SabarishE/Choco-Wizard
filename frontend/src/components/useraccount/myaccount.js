@@ -17,7 +17,10 @@ export const Myaccount = () => {
   // ---- retrieving past orders (Order history) ----
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/orders/myorders/${email}`, options)
+      .get(
+        `https://choco-wizard.herokuapp.com/orders/myorders/${email}`,
+        options
+      )
       .then((res) => {
         console.log("you orders a retreived", res);
         setMyorders([...res.data.myorders]);

@@ -51,7 +51,7 @@ export const Mycart = () => {
     console.log("final cart is ", finalCart);
 
     axios
-      .post("http://localhost:5000/orders/payment", body, options)
+      .post("https://choco-wizard.herokuapp.com/orders/payment", body, options)
       .then((res) => {
         console.log("response is >>>", res);
         if (res.data.flag === true) {
@@ -92,7 +92,7 @@ export const Mycart = () => {
     console.log("body is >>>", body);
 
     axios
-      .post("http://localhost:5000/orders/neworder", body, options)
+      .post("https://choco-wizard.herokuapp.com/orders/neworder", body, options)
       .then((res) => {
         if (res.data.flag === true) {
           toast("Order Placed !!! Thank You", {
