@@ -1,0 +1,264 @@
+html {
+  scroll-behavior: smooth;
+}
+#orders{
+position: relative;
+}
+.Admin-container {
+  width: 100%;
+  min-height: 90vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background-image:radial-gradient(rgb(209, 175, 175),rgb(70, 16, 16));
+}
+.admin-header{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+ 
+}
+
+.admin-card-1 {
+  display: flex;
+  width: 300px;
+  height: 4rem;
+  align-items: center;
+  font-size: 1.2rem;
+  color: black;
+  margin: 1rem;
+  font-weight: bold;
+  box-shadow: 0 0 1rem 2px rgb(70, 16, 16);
+  background-color: white;
+  padding:1rem 1rem 1rem 0.5rem;
+  border-radius: 0.5rem;
+  font-family: "Prompt", sans-serif;
+  box-sizing: border-box;
+}
+.admin-body h1{
+  font-family: "Prompt", sans-serif;
+  color: white;
+}
+
+.admin-card-1 div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.admin-card-1 img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.25rem;
+}
+.admin-card-2{
+  display: flex;
+  justify-content: space-between;
+  width:310px;
+} 
+.admin-card-2 .admin-card-square{
+display: flex;
+flex-direction: column;
+box-shadow: 0 0 1rem 2px rgb(70, 16, 16);
+background-color: white;
+padding:0.5rem;
+border-radius: 0.5rem;
+box-sizing: border-box;
+}
+.admin-card-2 .admin-card-square .field{
+  font-size: 1.2rem;
+  font-family: "Prompt", sans-serif;
+}
+.admin-card-2 .admin-card-square .value{
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Prompt", sans-serif;
+  font-weight: bold;
+}
+.admin-menubar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem 0;
+  padding:0.5rem 0rem;
+  box-shadow: 0 0 1rem 2px rgb(70, 16, 16);
+  height: 2rem;
+}
+.admin-menubar a{
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border:none;
+  cursor: pointer;
+  color: white;
+  border:1px solid white;
+  height:100%;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  padding:0 0.5rem;
+}
+
+.admin-body>div {
+  min-height: 85vh;
+  padding-top: 3rem;
+}
+.orders-table {
+  width: 90%;
+  margin:auto;
+}
+.orders-table thead th{
+  border:1px solid rgb(70, 16, 16);
+  background-color:black;
+  font-family: "Prompt", sans-serif;
+  color:white ;
+}
+.orders-table tbody td{
+  border:1px solid rgb(70, 16, 16);
+  background-color: white;
+  color: black;
+  text-align:center;
+}
+.summary-div{
+width: 280px;
+max-height: 300px;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+overflow-y:auto;
+border:1px solid black;
+background-color:rgb(209, 175, 175) ;
+color: rgb(70, 16, 16);
+box-shadow: 0 0 1rem 2px rgb(70, 16, 16);
+font-weight: bold;
+z-index: 2;
+padding:0.5rem;
+border-radius: 0.5rem;
+}
+.summary-div td{
+ 
+  box-sizing: border-box;
+  text-align: center;
+}
+.summary-div .field{
+  width:35%;
+  background-color: black;
+  color: white;
+  font-family: "Prompt", sans-serif;
+}
+.summary-div .data{
+  border:1px solid black;
+  width:60%;
+}
+.summary-div button{
+  position: absolute;
+  right:0.25rem;
+  bottom:0.25rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border:none
+}
+/* ---- CSS for products ---- */
+#products h3{
+  display: flex;
+  justify-content: space-between;
+}
+#products form{
+  width:310px;
+  height: 440px;
+  box-shadow: 0 0 4px 2px white;
+  border-radius: 1rem;
+}
+#products h4{
+  text-align: center;
+  color:rgb(70, 16, 16);
+  font-family: "Prompt", sans-serif;
+  margin-bottom: 0;
+}
+#products form div{
+  display: flex;
+  flex-direction: column;
+  width:90%;
+  box-sizing: border-box;
+  margin:0.5rem auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 4px 2px rgb(70, 16, 16);
+  font-family: "Prompt", sans-serif;
+}
+#products form div label{
+  padding:0  0.25rem ;
+}
+#products form div input,#products form div textarea{
+  border-radius: 0 0 0.25rem 0.25rem;
+  border:none;
+}
+.new-product .new-product textarea{
+  width:70%;
+
+}
+
+.product-forms-flex{
+  display: flex;
+  justify-content: space-evenly;
+}
+.update-product .ID{
+  display: block;
+  margin:auto;
+}
+
+/* --- CSS for products table --- */
+
+.products-table-div{
+  margin:5rem 1rem 1rem 1rem;
+ }
+.products-table-div table{
+  width:90%;
+  margin:auto;
+}
+.products-table-div table button{
+  width:100%;
+  margin:1rem 0;
+  border:none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  color: white;
+}
+.products-table-div table button:hover{
+  box-shadow: 0 0 4px 2px black;
+}
+.delete-btn{
+  background-color: rgb(251, 72, 72);
+}
+.update-btn{
+  background-color: rgb(94, 94, 247);
+}
+.products-table-div thead td{
+  text-align: center;
+  background-color:black ;
+  color: white;
+  font-weight: bold;
+  font-family: "Prompt", sans-serif;
+}
+.products-table-div td{
+  border:1px solid rgb(70, 16, 16);
+}
+.products-table-div tbody td{
+background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+.products-table-div{
+  overflow-x: auto;
+}  
+
+#orders{
+  overflow-x: auto;
+}
+.product-forms-flex{
+  flex-wrap: wrap;
+}
+.product-forms-flex form{
+  margin: 1rem auto;
+}
+}

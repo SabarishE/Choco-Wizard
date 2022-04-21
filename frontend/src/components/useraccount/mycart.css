@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+.Mycart-container {
+  width: 100%;
+  min-height: 90vh;
+  padding: 2rem 1rem;
+  background-image: radial-gradient(rgb(70, 16, 16), rgb(19, 1, 1));
+  color: white;
+  box-sizing: border-box;
+}
+.Mycart {
+  margin: auto;
+  width: 80%;
+}
+.Mycart .Mycart-header {
+  display: flex;
+  height: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+  color: rgb(166, 166, 166);
+  font-family: "Concert One", cursive;
+}
+.Mycart .Mycart-header img {
+  height: 1.8rem;
+  width: 1.8rem;
+  margin: 0 1rem;
+  vertical-align: middle;
+}
+.Mycart .Mycart-header button,
+.cart-listing-item .remove-btn button {
+  border: none;
+  background: linear-gradient(0deg, rgb(70, 16, 16), red);
+  border-radius: 0.5rem;
+  height: 1.2rem;
+  cursor: pointer;
+  color: white;
+  border: 1px solid rgb(39, 39, 39);
+  transition: all 4s;
+}
+.Mycart .Mycart-header button:hover,
+.cart-listing-item .remove-btn button:hover {
+  background: linear-gradient(0deg, red, red);
+}
+
+.empty-cart {
+  width: 280px;
+  margin: 2rem auto;
+  padding: 0.5rem;
+  color: rgb(166, 166, 166);
+  text-align: center;
+  font-family: "Concert One", cursive;
+}
+.empty-cart img {
+  height: 8rem;
+  width: 8rem;
+  display: block;
+  margin: auto;
+}
+.cart-listing-item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid grey;
+  padding: 0 0 1rem 0;
+  margin: 1rem 0;
+}
+.cart-listing-item span {
+  margin: 0 0.5rem;
+}
+
+.cart-listing-item .quantity button {
+  background: transparent;
+  border: none;
+  color: white;
+  height: 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.cart-listing-item input {
+  width: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+.cart-listing-item img {
+  width: 200px;
+  height: 150px;
+  border-radius: 0.5rem;
+}
+
+.summary {
+  display: flex;
+  justify-content: end;
+  height: 200px;
+  width: 100%;
+  margin-top: 2rem;
+  position: relative
+}
+.summary .summary-div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  border: 1px solid grey;
+}
+.summary .summary-div div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.summary .checkout-btn {
+  margin: 0.5rem;
+  height: 1.5rem;
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.summary .checkout-btn:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+.summary h3 {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 375px) {
+  .cart-listing-item img {
+    width: 80px;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .cart-listing-item {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 580px) and (min-width: 375px) {
+  .cart-listing-item img {
+    width: 100px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Mycart {
+    width: 100%;
+  }
+}

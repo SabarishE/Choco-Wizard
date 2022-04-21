@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+.product-list-container {
+  min-height: 90vh;
+  width: 100%;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  background-image: radial-gradient(rgb(70, 16, 16), rgb(19, 1, 1));
+  /* background-image: radial-gradient(rgb(70, 16, 16), black); */
+}
+
+/* -----filter section starts------ */
+
+.not-found {
+  width: 280px;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: rgb(166, 166, 166);
+  text-align: center;
+  font-family: "Concert One", cursive;
+}
+.not-found img {
+  height: 8rem;
+  width: 8rem;
+  display: block;
+  margin: auto;
+}
+
+.filter-section {
+  display: flex;
+  width: 280px;
+  margin: 0 auto 3rem auto;
+}
+.filter-section > div {
+  min-width: 33.33%;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  box-sizing: border-box;
+}
+.filter-section > div:hover {
+  border: 1px solid white;
+  transition: all 0.5s;
+}
+
+.filter-section img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.filter-menu {
+  display: inline-block;
+  position: relative;
+}
+
+.filter-menu .filter-menu-content {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  z-index: 5;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+.filter-menu-content span {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+.filter-menu:hover .filter-menu-content {
+  display: block;
+}
+.filter-menu .filter-menu-content span:hover {
+  background-color: rgb(70, 16, 16);
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.filter-byname {
+  display: inline-block;
+  position: relative;
+}
+.filter-byname-bar {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  left: -6.5rem;
+  z-index: 5;
+  margin: auto;
+}
+.filter-byname-bar div {
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.25rem;
+}
+.filter-byname-bar div img {
+  height: 1.5rem;
+  width: 1.5rem;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-right: 0.25rem;
+}
+.filter-byname-bar div img:hover {
+  opacity: 1;
+}
+.filter-byname-bar input {
+  height: 1.5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  font-weight: bold;
+  transition: all 0.5s;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+}
+.filter-byname-bar input:focus {
+  outline: none;
+}
+.filter-byname:hover .filter-byname-bar {
+  display: block;
+}
+/* .filter-menu:hover .filter-menu-content {
+  display: block;
+} */
+
+/* -----filter section ends------ */
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.card-link {
+  text-decoration: none;
+}
+
+.product-card {
+  width: 300px;
+  height: 280px;
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 16px 4px rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  background-image: linear-gradient(rgb(70, 16, 16), rgb(36, 1, 1));
+  box-sizing: border-box;
+}
+/* .product-card:hover {
+  box-shadow: 0 0 1rem 0.5rem brown;
+  transition: 0.3s;
+} */
+.card-flex {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  background-color: black;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.card-flex div {
+  width: 50%;
+}
+.card-details img {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 0.5rem;
+  margin-left: 5rem;
+  transition: all 0.3s;
+}
+.card-details img:hover {
+  box-shadow: 0 0 3px 1px white;
+  cursor: pointer;
+  /* transition: 0.3s; */
+  margin-left: 5.2rem;
+}
+
+.card-img {
+  height: 70%;
+  box-sizing: border-box;
+  transition: transform 0.4s;
+}
+
+.card-img img {
+  /* vertical-align: middle; */
+  width: 80%;
+  height: 80%;
+  border-radius: 0.5rem;
+  display: block;
+  margin: 1rem auto;
+  transition: all 0.8s;
+}
+.product-card:hover .card-img img {
+  transform: scale(1.05);
+}
+.card-name {
+  font-weight: bold;
+  padding: 0.5rem;
+  height: 2rem;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: "Patrick Hand", cursive;
+}
+.card-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(236, 236, 75);
+  padding: 0.5rem;
+  font-family: "Patrick Hand", cursive;
+}
+.card-price img {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+}
+
+/* -----SELECTED PRODUCTS STARTS------- */
+
+.selected-product-contianer {
+  min-height: 90vh;
+  width: 100%;
+  padding: 4rem 2rem;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.selected-product {
+  margin: auto;
+  width: 600px;
+
+  border: 1px solid black;
+  box-shadow: 0 0 1rem 0.5rem black;
+}
+.selected-product-details {
+  height: 275px;
+  display: flex;
+
+  box-sizing: border-box;
+}
+
+.selected-product .selected-product-img {
+  width: 60%;
+}
+.selected-product .selected-product-img img {
+  width: 100%;
+  height: 80%;
+  border-bottom-right-radius: 1rem;
+}
+
+.selected-product-ops {
+  width: 40%;
+  padding: 0.25rem 1rem 0.25rem 0.5rem;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.selected-product-ops .name {
+  font-size: 2rem;
+  color: white;
+}
+.selected-product-ops .price {
+  color: white;
+  font-size: 1.5rem;
+}
+.selected-product-ops .quantity {
+  display: flex;
+  justify-content: space-between;
+}
+.selected-product-ops .quantity input {
+  width: 4rem;
+  text-align: center;
+}
+.selected-product-ops .quantity button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+}
+.addtocart img {
+  cursor: pointer;
+}
+
+/* ---product description---- */
+.selected-product-description {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* -----SELECTED PRODUCTS ENDS------- */
+
+/* ---media queries--- */
+
+@media screen and (max-width: 530px) {
+  .selected-product-contianer {
+    padding: 3rem 0.5rem;
+  }
+  .selected-product {
+    width: 100%;
+  }
+  .selected-product-details {
+    height: 420px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-top: 0px;
+  }
+
+  .selected-product .selected-product-img {
+    width: 100%;
+    height: 60%;
+  }
+  .selected-product .selected-product-img img {
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 0rem;
+  }
+
+  .selected-product-ops {
+    width: 100%;
+    height: 40%;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 660px) and (min-width: 530px) {
+  .selected-product-contianer {
+    padding: 3rem 0rem;
+  }
+  .selected-product {
+    margin: auto;
+    width: 500px;
+  }
+}

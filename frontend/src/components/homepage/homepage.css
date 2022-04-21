@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+.homepage-1 {
+  /* background-color: rgb(48, 17, 17); */
+  height: 90vh;
+  box-sizing: border-box;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: rgb(46, 46, 46);
+  /* padding: 4rem 4rem 5rem 4rem; */
+  box-shadow: 0 0 3rem 1rem inset rgb(48, 17, 17);
+}
+.bg-video {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+.intro {
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 2rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 90%;
+  height: 65vh;
+  box-sizing: border-box;
+  margin: auto;
+}
+.intro h1 {
+  width: 60%;
+  margin: auto;
+  font-family: "Concert One", cursive;
+}
+.homepage-1 img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.intro > div {
+  width: 50%;
+  /* height: 90%; */
+  box-sizing: border-box;
+}
+.homepage-2 {
+  min-height: 90vh;
+  box-sizing: border-box;
+  background: rgb(46, 46, 46);
+  padding: 4rem 4rem 5rem 4rem;
+  box-shadow: 0 0 3rem 1rem inset rgb(48, 17, 17);
+}
+
+/* ------flip form starts------ */
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 410px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin: 0.25rem auto;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+#flip {
+  transform: rotateY(180deg);
+}
+#flip-reverse {
+  transform: rotateY(0deg);
+}
+/* ------flip form ends------ */
+
+.login,
+.Signup {
+  margin: auto;
+  width: 250px;
+  height: 420px;
+  background-size: cover;
+  padding: 2rem 0.5rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px 2px rgb(253, 239, 239);
+  position: absolute;
+  backface-visibility: hidden;
+  opacity: 0.6;
+  border-radius: 0.8rem;
+  transition: 0.3s;
+}
+
+.login:hover,
+.Signup:hover {
+  opacity: 1;
+  box-shadow: 0 0 8px 2px black;
+}
+.Signup {
+  transform: rotateY(180deg);
+}
+.login .loader,
+.Signup .loader {
+  position: relative;
+  left: 4px;
+  bottom: 16px;
+  text-align: left;
+  height: 2rem;
+  margin: 0;
+}
+
+.login form,
+.Signup form {
+  width: 55%;
+  background: transparent;
+  opacity: 1;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+.login form div,
+.Signup form div {
+  margin: 1rem 0;
+}
+.login form label,
+.Signup form label {
+  color: white;
+}
+.login form input,
+.Signup form input {
+  border: 2px solid white;
+  width: 100%;
+  background: transparent;
+  color: white;
+}
+.login form input[type="submit"],
+.Signup form input[type="submit"] {
+  width: 4rem;
+}
+.login button,
+.Signup button {
+  width: 5rem;
+  height: 2rem;
+  border: 1px solid white;
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(90deg, brown, rgb(223, 100, 100));
+}
+
+/* .slide-image {
+  width: 100%;
+  height: 100%;
+} */
+.slide-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+
+/* 
+.carousel {
+  border: 1px sild white;
+  background-color: red;
+} */
+
+/* .carousel-item {
+  width: 80%;
+  box-sizing: border-box;
+  margin: auto;
+}
+.carousel-item img {
+  display: block;
+  margin: auto;
+} */
+
+@media screen and (max-width: 375px) {
+  .homepage-2 {
+    padding: 4rem 1rem;
+  }
+  .intro {
+    width: 100%;
+  }
+  .homepage-1 {
+    padding: 1rem 1rem;
+  }
+  .homepage-1 h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* @media screen and (max-width: 400px) {
+  .slide-image {
+    width: 250px;
+    height: 200px;
+  }
+} */
+
+/* @media screen and (max-width: 500px) {
+  .homepage-1 {
+
+    
+} */
+
+@media screen and (max-width: 660px) {
+  /* .homepage-1 {
+    height: 50vh;
+    padding: 1rem 3rem;
+  } */
+  /* .homepage-1 h1 {
+    width: 85%;
+  } */
+}
+@media screen and (max-width: 750px) and (min-width: 660px) {
+}
+@media screen and (max-width: 750px) and (min-width: 375px) {
+  .intro {
+    width: 95%;
+  }
+  .homepage-1 {
+    padding: 1rem 3rem;
+  }
+}
+@media screen and (max-width: 750px) {
+  .homepage-1 {
+    height: 100vh;
+  }
+  .homepage-1 h1 {
+    color: rgb(109, 52, 52);
+    width: 90%;
+  }
+  .homepage-1 video {
+    display: none;
+  }
+  .intro {
+    position: static;
+    margin: 2rem auto;
+  }
+  .intro > div {
+    width: 100%;
+    max-height: 90%;
+    margin: 1rem auto;
+  }
+  .slide-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .intro img {
+    display: none;
+  }
+  .intro {
+    top: 4rem;
+  }
+}

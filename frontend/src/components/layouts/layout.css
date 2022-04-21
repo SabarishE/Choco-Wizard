@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+.header {
+  min-height: 10vh;
+  width: 100%;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.header .title {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: "Concert One", cursive;
+  font-size: 2rem;
+  margin: 0 0.5rem;
+}
+.header div {
+  display: flex;
+  align-items: center;
+}
+.logo:hover {
+  box-shadow: 0 0 4px 2px white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header img {
+  margin: 0.25rem;
+}
+.logo {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem ;
+  margin-left: 0.25rem;
+box-shadow: 0 0 4px 1px white;
+  border-radius: 0.5rem;
+}
+
+.user-badge img {
+  margin: 0;
+  
+}
+.user-badge div {
+  padding-left: 0.5rem;
+}
+.user-badge-details{
+  display: flex;
+  flex-direction: column;
+}
+.logout {
+  font-size: 0.8rem;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 0 0.25rem;
+  height: 0.9rem;
+  border-radius: 0.5rem;
+}
+.logout:hover {
+  box-shadow: 0 0 4px 2px white;
+  cursor: pointer;
+}
+.body {
+  min-height: 90vh;
+  width: 100%;
+  margin-top: 10vh;
+  box-sizing: border-box;
+}
+.cart-badge {
+  margin: 0 0.25rem;
+  position: relative;
+}
+
+.cart-badge span {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50%;
+  padding: 2px;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  border: 1px solid black;
+}

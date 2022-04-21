@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+
+.Myaccount-container {
+  width: 100%;
+  min-height: 90vh;
+  padding:4rem 1rem 2rem 1rem;
+  box-sizing: border-box;
+  background-image:radial-gradient(rgb(209, 175, 175),rgb(70, 16, 16));
+}
+.Myaccount-container h1 {
+  padding: 0 1rem;
+  font-family: "Concert One", cursive;
+}
+.Myaccount-card {
+  width: 18rem;
+  height: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem 2px rgb(70, 16, 16);
+  background-color: white;
+  margin: 0 1rem;
+  font-family: "Prompt", sans-serif;
+}
+.Myaccount-card-pic {
+  width: 30%;
+}
+.Myaccount-card-pic img {
+  width: 5rem;
+  height: 5rem;
+  vertical-align: middle;
+}
+.Myaccount-card-details {
+  width: 70%;
+  padding: 0 0.25rem;
+}
+
+/* -----Order History listing----- */
+
+.no-orders {
+  width: 280px;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: rgb(166, 166, 166);
+  text-align: center;
+  font-family: "Concert One", cursive;
+}
+.no-orders img {
+  height: 8rem;
+  width: 8rem;
+  display: block;
+  margin: auto;
+}
+
+.order-box {
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+  box-sizing: border-box;
+  max-width: 60rem;
+  background-color: white;
+  color: black;
+}
+.order-box .order-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(70, 16, 16);
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  color: white;
+  box-sizing: border-box;
+  padding: 1rem 0.5rem;
+  font-family: "Prompt", sans-serif;
+}
+.order-box .order-box-header p {
+  margin: 0.25rem;
+}
+.Total-price {
+  text-align: right;
+  font-weight: bold;
+  height: 1.25rem;
+  padding: 0.5rem;
+  font-family: "Courier New", Courier, monospace;
+}
+.order-box-body {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid grey;
+}
+
+.order-box-body > div {
+  width: 25%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.order-box-body p {
+  padding: 0 0.25rem;
+}
+.order-box-body .order-box-heading {
+  background-color: black;
+  color: white;
+  width: 90%;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+}
+.order-box-body-1 {
+  width: 5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+  font-weight: bold;
+}
+.order-box-body-1 img {
+  width: 5rem;
+  height: 3.5rem;
+  margin-top: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+@media screen and (max-width: 370px) {
+  .order-box-heading {
+    font-size: 0.8rem;
+  }
+  .order-box-body {
+    padding: 0 0.1rem;
+  }
+  .order-box-body-1 img {
+    width: 4rem;
+    height: 2.5rem;
+  }
+  .order-box-header {
+    font-size: 0.8rem;
+  }
+  .Myaccount-container h1 {
+    padding: 0;
+  }
+  .Myaccount-card {
+    margin: 0;
+  }
+}
